@@ -9,15 +9,7 @@ DEVICE_KERNEL_PATH := device/xiaomi/ingres-kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8450
 TARGET_KERNEL_CONFIG := vendor/waipio_GKI.config vendor/ingres_GKI.config
 
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_BINARIES := kernel
-BOARD_RAMDISK_USE_LZ4 := true
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_KERNEL_PATH)/vendor-modules/modules.load))
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_KERNEL_PATH)/vendor-modules/modules.blocklist
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_KERNEL_PATH)/ramdisk-modules/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_KERNEL_PATH)/ramdisk-modules/modules.blocklist
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_KERNEL_PATH)/ramdisk-modules/modules.load.recovery))
 TARGET_FORCE_PREBUILT_KERNEL := true
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_KERNEL_PATH)/prebuilts/dtbo.img
 TARGET_PREBUILT_KERNEL := $(DEVICE_KERNEL_PATH)/prebuilts/kernel
